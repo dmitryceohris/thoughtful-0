@@ -1,0 +1,66 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "brand": {
+    "name": "Thoughtful",
+    "positioning": "Boundary-first essay practice for students"
+  },
+  "color": {
+    "ink": { "value": "#18181B", "description": "Primary text and high-contrast surfaces" },
+    "canvas": { "value": "#F4F6F0", "description": "Default page background" },
+    "surface": { "value": "#FFFFFF", "description": "Primary panels and form surfaces" },
+    "paper": { "value": "#FFFDF8", "description": "Notebook and document surfaces" },
+    "line": { "value": "#D9E1DC", "description": "Borders and dividers" },
+    "muted": { "value": "#626F6B", "description": "Secondary copy" },
+    "sage": { "value": "#4D6D5A", "description": "Primary action and learning state" },
+    "copper": { "value": "#B96F3E", "description": "Warm accent for status and attention" },
+    "lake": { "value": "#315F82", "description": "Information and source-work accent" },
+    "amber": { "value": "#F0CF87", "description": "Highlight on dark surfaces" },
+    "danger": { "value": "#B54848", "description": "Inline validation and blocking states" }
+  },
+  "typography": {
+    "fontFamily": {
+      "display": { "value": "Space Grotesk, ui-sans-serif, system-ui" },
+      "body": { "value": "Space Grotesk, ui-sans-serif, system-ui" },
+      "mono": { "value": "JetBrains Mono, ui-monospace, monospace" }
+    },
+    "scale": {
+      "hero": { "value": "clamp(3rem, 7vw, 5.5rem)" },
+      "h2": { "value": "clamp(2rem, 4vw, 3rem)" },
+      "h3": { "value": "1.25rem" },
+      "body": { "value": "1rem" },
+      "caption": { "value": "0.75rem" }
+    },
+    "lineHeight": {
+      "tight": { "value": "0.94" },
+      "heading": { "value": "1.12" },
+      "body": { "value": "1.65" }
+    }
+  },
+  "space": {
+    "1": { "value": "4px" },
+    "2": { "value": "8px" },
+    "3": { "value": "12px" },
+    "4": { "value": "16px" },
+    "5": { "value": "20px" },
+    "6": { "value": "24px" },
+    "8": { "value": "32px" },
+    "10": { "value": "40px" },
+    "12": { "value": "48px" },
+    "16": { "value": "64px" }
+  },
+  "radius": {
+    "sm": { "value": "4px" },
+    "md": { "value": "6px" },
+    "lg": { "value": "8px" }
+  },
+  "shadow": {
+    "soft": { "value": "0 16px 42px -30px rgba(24, 24, 27, 0.32)" },
+    "medium": { "value": "0 24px 70px -46px rgba(24, 24, 27, 0.38)" },
+    "strong": { "value": "0 34px 90px -54px rgba(24, 24, 27, 0.48)" }
+  },
+  "motion": {
+    "fast": { "value": "160ms cubic-bezier(0.16, 1, 0.3, 1)" },
+    "base": { "value": "260ms cubic-bezier(0.16, 1, 0.3, 1)" },
+    "pageFlip": { "value": "1500ms cubic-bezier(0.2, 0.72, 0.18, 1)" }
+  }
+}

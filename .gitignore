@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+
+.env
+.env.local
+.env.*.local
+
+.vercel/
+supabase/.temp/
+
+*.log
+.DS_Store
+.playwright-mcp/

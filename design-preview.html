@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thoughtful Design Preview</title>
+    <style>
+      :root {
+        --ink: #18181b;
+        --canvas: #f4f6f0;
+        --surface: #ffffff;
+        --paper: #fffdf8;
+        --line: #d9e1dc;
+        --muted: #626f6b;
+        --sage: #4d6d5a;
+        --copper: #b96f3e;
+        --lake: #315f82;
+        --amber: #f0cf87;
+        --shadow: 0 24px 70px -46px rgba(24, 24, 27, 0.38);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 246, 240, 0.92)),
+          linear-gradient(135deg, rgba(77, 109, 90, 0.08) 0 1px, transparent 1px 18px),
+          var(--canvas);
+        color: var(--ink);
+        font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      }
+
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 48px 20px 64px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        font-size: clamp(3rem, 8vw, 5rem);
+        line-height: 0.94;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        padding: 8px 12px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .grid {
+        display: grid;
+        gap: 20px;
+      }
+
+      .hero {
+        margin-top: 32px;
+        text-align: center;
+      }
+
+      .hero-copy {
+        max-width: 920px;
+        margin: 0 auto;
+      }
+
+      .stage {
+        grid-template-columns: minmax(0, 0.8fr) minmax(360px, 620px) minmax(0, 0.8fr);
+        align-items: center;
+        margin-top: 32px;
+      }
+
+      .panel,
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: var(--shadow);
+      }
+
+      .panel {
+        padding: 20px;
+      }
+
+      .form {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 8px;
+        max-width: 660px;
+        margin: 28px auto 0;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: var(--shadow);
+      }
+
+      input,
+      button {
+        min-height: 48px;
+        border-radius: 6px;
+        font: inherit;
+      }
+
+      input {
+        width: 100%;
+        border: 1px solid transparent;
+        background: var(--canvas);
+        padding: 0 16px;
+      }
+
+      button {
+        border: 0;
+        padding: 0 18px;
+        font-weight: 700;
+      }
+
+      .primary {
+        background: var(--sage);
+        color: white;
+      }
+
+      .secondary {
+        border: 1px solid var(--line);
+        background: #f4f4f4;
+        color: var(--muted);
+      }
+
+      .book {
+        border: 4px solid var(--sage);
+        border-radius: 8px;
+        background: var(--sage);
+        padding: 6px;
+      }
+
+      .spread {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        aspect-ratio: 1.36;
+        overflow: hidden;
+        border-radius: 6px;
+        background: var(--paper);
+      }
+
+      .page {
+        background:
+          repeating-linear-gradient(to bottom, transparent 0 21px, rgba(77, 109, 90, 0.18) 22px 23px),
+          linear-gradient(to right, rgba(185, 111, 62, 0.11), transparent 18%),
+          var(--paper);
+      }
+
+      .page:first-child {
+        border-right: 1px solid #d5d5d5;
+        box-shadow: inset -18px 0 30px -26px rgba(24, 24, 27, 0.62);
+      }
+
+      .page:last-child {
+        box-shadow: inset 18px 0 30px -26px rgba(24, 24, 27, 0.62);
+      }
+
+      .swatches {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        margin-top: 44px;
+      }
+
+      .swatch {
+        min-height: 116px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+      }
+
+      .chip {
+        height: 64px;
+      }
+
+      .chip-label {
+        padding: 12px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 44px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .label {
+        color: var(--copper);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 760px) {
+        .stage,
+        .cards,
+        .swatches,
+        .form {
+          grid-template-columns: 1fr;
+        }
+
+        .book-panel {
+          order: -1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <span class="eyebrow">Boundary-first essay practice</span>
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>A thinking studio for stronger student essays.</h1>
+          <p style="max-width: 62ch; margin-top: 24px">
+            Thoughtful helps students test claims, work from their own sources, and understand rubric pressure before a draft goes anywhere near a contest.
+          </p>
+        </div>
+        <div class="grid stage">
+          <article class="card">
+            <p class="label">Claim stress test</p>
+            <h3 style="margin-top: 14px">Socratic Simulator</h3>
+            <p style="margin-top: 12px">Turns a thesis into precise questions that expose assumptions and evidence gaps.</p>
+          </article>
+          <div class="panel book-panel">
+            <p class="label">Live practice surface</p>
+            <div class="book">
+              <div class="spread">
+                <div class="page"></div>
+                <div class="page"></div>
+              </div>
+            </div>
+          </div>
+          <article class="card">
+            <p class="label">Draft review</p>
+            <h3 style="margin-top: 14px">Logic Fallacy Detector</h3>
+            <p style="margin-top: 12px">Highlights risky reasoning without rewriting the student's voice.</p>
+          </article>
+        </div>
+        <form class="form">
+          <input type="email" placeholder="you@example.com" />
+          <button class="primary" type="button">Join waitlist</button>
+          <button class="secondary" type="button">Coming soon</button>
+        </form>
+      </section>
+
+      <section class="grid swatches">
+        <div class="swatch"><div class="chip" style="background: var(--ink)"></div><div class="chip-label">ink</div></div>
+        <div class="swatch"><div class="chip" style="background: var(--canvas)"></div><div class="chip-label">canvas</div></div>
+        <div class="swatch"><div class="chip" style="background: var(--sage)"></div><div class="chip-label">sage</div></div>
+        <div class="swatch"><div class="chip" style="background: var(--copper)"></div><div class="chip-label">copper</div></div>
+        <div class="swatch"><div class="chip" style="background: var(--lake)"></div><div class="chip-label">lake</div></div>
+      </section>
+
+      <section class="grid cards">
+        <article class="card">
+          <p class="label">Principle</p>
+          <h3 style="margin-top: 14px">Guide, do not complete</h3>
+          <p style="margin-top: 12px">The interface frames questions and checks instead of promising finished essays.</p>
+        </article>
+        <article class="card">
+          <p class="label">Principle</p>
+          <h3 style="margin-top: 14px">Keep sources visible</h3>
+          <p style="margin-top: 12px">Uploads, rubrics, and archive status carry visual weight in the core surface.</p>
+        </article>
+        <article class="card">
+          <p class="label">Principle</p>
+          <h3 style="margin-top: 14px">Show boundaries early</h3>
+          <p style="margin-top: 12px">Competition compliance and originality checks are product signals, not footnotes.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

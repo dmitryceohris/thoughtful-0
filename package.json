@@ -1,0 +1,38 @@
+{
+  "name": "thoughtful-idea",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "next lint",
+    "supabase:init": "supabase init",
+    "vercel:dev": "vercel dev",
+    "vercel:deploy": "vercel deploy"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
+    "@radix-ui/react-accordion": "^1.2.14",
+    "@supabase/supabase-js": "^2.108.2",
+    "motion": "^12.40.0",
+    "next": "^14.2.30",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.30",
+    "postcss": "^8.4.39",
+    "supabase": "^2.107.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.5.3",
+    "vercel": "^54.14.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
